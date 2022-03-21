@@ -11,21 +11,13 @@
 
 void print_rev(char *s)
 {
-	/* assigning a pointer to string s*/
-	int *rev_ptr = s;
+	int length = 0, index;
 
-	/*Getting length of the string s*/
-	while (*(rev_ptr + 1) != '\0')
-	{
-		rev_ptr++;
-	}
+	while (s[index++])
+		length++;
 
-	while (rev+ptr > s)
-	{
-		char temp = *rev_ptr;
-		*rev_ptr = *s;
-		*s = temp;
-	}
+	for (index = length - 1; index >= 0; index--)
+		_putchar(s[index]);
 
-	_putchar ('\n');
+	_putchar('\n');
 }
