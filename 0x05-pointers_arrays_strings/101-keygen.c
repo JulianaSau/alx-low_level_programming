@@ -22,6 +22,3 @@ int main(void)
 	printf("%c\n", (2772 - c));
 	return (0);
 }
-© 2022 GitHub, Inc.
-Terms
-
