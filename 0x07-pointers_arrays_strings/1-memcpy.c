@@ -2,7 +2,7 @@
 
 /**
  * _memcpy - function to copy memory
- * 
+ *
  * @dest: memory to copy to
  * @src: memory t0 copy from
  * @n: number of bytes to copy
