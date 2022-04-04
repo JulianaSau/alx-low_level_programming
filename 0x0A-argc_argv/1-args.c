@@ -4,7 +4,7 @@
 /**
  * main - Prints the number of arguments passed to the program
  * followed by a new line
- * 
+ *
  * @argc : number of command-line arguments
  * @argv : string of argumenst passed to main fcn
  *
