@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * _strdup - returns a pointer to anewly allocated 
+ * _strdup - returns a pointer to anewly allocated
  * space in memory which contains a copy of the
  * string given as a parameter
  *
