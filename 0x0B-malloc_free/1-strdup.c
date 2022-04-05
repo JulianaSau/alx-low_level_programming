@@ -12,7 +12,7 @@
  * a pointer to the duplicated string (Success)
  */
 
-char *_strdup(cahr *str)
+char *_strdup(char *str)
 {
 	int index, length = 0;
 
