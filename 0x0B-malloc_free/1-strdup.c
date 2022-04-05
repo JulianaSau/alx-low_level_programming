@@ -14,25 +14,25 @@
 
 char *_strdup(char *str)
 {
-	unsigned int index, length = 0;
+	char *dup;
+	unsigned int i, len;
 
-	char *dup_string;
+	i = 0;
+	len = 0;
 
 	if (str == NULL)
 		return (NULL);
 
-	/*getting the length of the string provided*/
-	for (index = 0; str[index]; index++)
-		length++;
+	while (str[len])
+		len++;
 
-	dup_string = malloc(sizeof(char) * (length + 1));
+	dup = malloc(sizeof(char) * (len + 1));
 
-	if (dup_string == NULL)
+	if (dup == NULL)
 		return (NULL);
 
-	/*Duplicating string contents into second array*/
-	while ((dup_string[index] = str[index]) != '\0')
-		index++;
+	while ((dup[i] = str[i]) != '\0')
+		i++;
 
-	return (dup_string);
+	return (dup);
 }
