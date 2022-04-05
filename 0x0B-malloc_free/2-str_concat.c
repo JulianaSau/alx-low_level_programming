@@ -11,7 +11,7 @@
  * NULL if empty string(failure)
  */
 
-char *str_concat(char *s1, char*s2)
+char *str_concat(char *s1, char *s2)
 {
 	unsigned int i, j, len, index = 0;
 
