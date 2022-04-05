@@ -14,9 +14,9 @@
 
 char *_strdup(char *str)
 {
-	int index, length = 0;
+	unsigned int index, length = 0;
 
-	char *str2;
+	char *dup_string;
 
 	if (str == NULL)
 		return (NULL);
@@ -25,16 +25,14 @@ char *_strdup(char *str)
 	for (index = 0; str[index]; index++)
 		length++;
 
-	str2 = malloc(sizeof(char) * (length + 1));
+	dup_string = malloc(sizeof(char) * (length + 1));
 
-	if (str2 == NULL)
+	if (dup_string == NULL)
 		return (NULL);
 
 	/*Duplicating string contents into second array*/
-	for (index = 0; str[index]; index++)
-		str2[1] = str[1];
+	while ((dup_string[index] = str[index]) != '\0')
+		index++;
 
-	str2[index + 1] = '\0';
-
-	return (str2);
+	return (dup_string);
 }
