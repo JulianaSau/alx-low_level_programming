@@ -15,7 +15,6 @@ void *malloc_ckecked(unsigned int b)
 
 	ptr = malloc(b);
 
-	/*Check if malloc failed*/
 	if (ptr == NULL)
 		exit(98);
 
