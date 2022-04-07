@@ -34,7 +34,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	/* handle case of pointer being null */
 	if (ptr == NULL)
 		return (malloc(new_size));
-	/* allocate memory to new block */
 	ptr1 = malloc(new_size);
 
 	/* handle case of the new pointer being NULL */
@@ -56,7 +55,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		for (i = 0; i < old_size; i++)
 			ptr1[i] = old_ptr[i];
 	}
-
 	free(ptr);
 	return (ptr1);
 }
