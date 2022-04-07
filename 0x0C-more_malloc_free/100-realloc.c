@@ -15,7 +15,7 @@
  * if new_size=0 && ptr != NULL, call = free(ptr) and Return NULL
  */
 
-void *_relloc(void *ptr, unsigned int old_size, unsigned int new_size)
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *ptr1, *old_ptr;
 	unsigned int i;
