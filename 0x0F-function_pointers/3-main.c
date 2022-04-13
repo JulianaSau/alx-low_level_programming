@@ -1,72 +1,43 @@
+#include "3-calc.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include "3-calc.h"
 
 /**
- * op_add - Adds two integers
- * @a: First integer
- * @b: Second integer
+ * main - Prints the result of simple operations.
+ * @argc: The number of arguments supplied to the program.
+ * @argv: An array of pointers to the arguments.
  *
- * Return: sum of the two
+ * Return: Always 0.
  */
-int op_add(int a, int b)
+int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-	return (a + b);
-}
+	int num1, num2;
+	char *op;
 
-/**
- * op_sub - Subtracts two integers
- * @a: First int
- * @b: Second int
- *
- * Return: Difference of the two
- */
-int op_sub(int a, int b)
-{
-	return (a - b);
-}
+	if (argc != 4)
+	{
+		printf("Error\n");
+		exit(98);
+	}
 
-/**
- * op_mul - Multiplies two integers
- * @a: First integer
- * @b: Second integer
- *
- * Return: Product of the two
- */
-int op_mul(int a, int b)
-{
-	return (a * b);
-}
+	num1 = atoi(argv[1]);
+	op = argv[2];
+	num2 = atoi(argv[3]);
 
-/**
- * op_div - Divides two integers
- * @a: First integer
- * @b: Second integer
- *
- * Return: Quotient of the two
- */
-int op_div(int a, int b)
-{
-	if (b == 0)
+	if (get_op_func(op) == NULL || op[1] != '\0')
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
+	if ((*op == '/' && num2 == 0) ||
+		(*op == '%' && num2 == 0))
 	{
 		printf("Error\n");
 		exit(100);
 	}
-	return (a / b);
-}
-/**
- * op_mod - Finds modulus of two integers
- * @a: First integer
- * @b: Second integer
- *
- * Return: Modulus of the two
- */
-int op_mod(int a, int b)
-{
-	if (b == 0)
-	{
-		printf("Error\n");
-		exit(100);
-	}
-	return (a % b);
+
+	printf("%d\n", get_op_func(op)(num1, num2));
+
+	return (0);
 }
