@@ -1,47 +1,72 @@
-#include "3-calc.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include "3-calc.h"
+
 /**
- * main - program that perfroms simple operations
- * @argc: number of arguments
- * @argv: array of arguments
+ * op_add - Adds two integers
+ * @a: First integer
+ * @b: Second integer
  *
- * Return: Always 0 (Success)
+ * Return: sum of the two
  */
-int main(int argc, char *argv[])
+int op_add(int a, int b)
 {
-	int arg1, arg2, result;
-	char o;
-	int (*func)(int, int);
+	return (a + b);
+}
 
-	if (argc != 4)
-	{
-		printf("Error\n");
-		exit(98);
-	}
+/**
+ * op_sub - Subtracts two integers
+ * @a: First int
+ * @b: Second int
+ *
+ * Return: Difference of the two
+ */
+int op_sub(int a, int b)
+{
+	return (a - b);
+}
 
-	arg1 = atoi(argv[1]);
-	arg2 = atoi(argv[3]);
+/**
+ * op_mul - Multiplies two integers
+ * @a: First integer
+ * @b: Second integer
+ *
+ * Return: Product of the two
+ */
+int op_mul(int a, int b)
+{
+	return (a * b);
+}
 
-	func = get_op_func(argv[2]);
-
-	if (!func)
-	{
-		printf("Error\n");
-		exit(99);
-	}
-
-	o = *argv[2];
-
-	if ((o == '/' || o == '%') && arg2 == 0)
+/**
+ * op_div - Divides two integers
+ * @a: First integer
+ * @b: Second integer
+ *
+ * Return: Quotient of the two
+ */
+int op_div(int a, int b)
+{
+	if (b == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
-
-	result = func(arg1, arg2);
-
-	printf("%d\n", result);
-
-	return (0);
+	return (a / b);
+}
+/**
+ * op_mod - Finds modulus of two integers
+ * @a: First integer
+ * @b: Second integer
+ *
+ * Return: Modulus of the two
+ */
+int op_mod(int a, int b)
+{
+	if (b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+	return (a % b);
 }
