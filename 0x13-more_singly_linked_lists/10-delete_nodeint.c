@@ -1,8 +1,7 @@
 #include "lists.h"
 
 /**
- * delete_nodeint_at_index - deletes node at given index in 
- * a linked list
+ * delete_nodeint_at_index - deletes node at given index in a linked list
  *
  * @head: ptr to ptr to 1st elem in a list
  * @index: the index to be deleted
@@ -24,7 +23,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		return (1);
 	}
 
-	for (node = 0;node < (index - 1); node++)
+	for (node = 0; node < (index - 1); node++)
 	{
 		if (copy->next == NULL)
 			return (0);
