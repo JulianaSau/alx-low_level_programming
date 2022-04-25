@@ -3,15 +3,13 @@
 #include <string.h>
 /**
  *print_list - function to print members of a linked list
- *@h: pointer to the 1st membe of the linked list
+ *@h: pointer to the 1st membe of the linked list(head)
  *Return: sze of the linked list
  */
 
-
-
 size_t print_list(const list_t *h)
 {
-	size_t nodes = 0;
+	size_t number_of_nodes = 0;
 
 	while (h)
 	{
@@ -21,9 +19,9 @@ size_t print_list(const list_t *h)
 		else
 			printf("[%d] %s\n", h->len, h->str);
 
-		nodes++;
+		number_of_nodes++;
 		h = h->next;
 	}
 
-	return (nodes);
+	return (number_of_nodes);
 }
