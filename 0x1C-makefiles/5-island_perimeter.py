@@ -1,41 +1,21 @@
 #!/usr/bin/python3
-'''
-Contains the function island_perimeter
-'''
+"""Defines an island perimeter measuring function."""
 
 
 def island_perimeter(grid):
-    '''
-    Returns the perimeter of the island descriibed in a grid
-    Args:
-        grid (list): A list of lists of integers
-    '''
-    perimeter = 0
-    for i in range(len(grid)):
-        for j in range(len(grid[i])):
-            if grid[i][j] == 1:
-                try:
-                    if grid[i][j - 1] == 0:
-                        perimeter += 1
-                except:
-                    pass
-
-                try:
-                    if grid[i - 1][j] == 0:
-                        perimeter += 1
-                except:
-                    pass
-
-                try:
-                    if grid[i][j + 1] == 0:
-                        perimeter += 1
-                except:
-                    pass
-
-                try:
-                    if grid[i + 1][j] == 0:
-                        perimeter += 1
-                except:
-                    pass
-
-    return perimeter
+    """Return the perimiter of an island
+    """
+    w = len(grid[0])
+    h = len(grid)
+    e = 0
+    s = 0
+    if h <= 100 and w <= 100:
+        for i in range(h):
+            for j in range(w):
+                if grid[i][j] == 1:
+                    s += 1
+                    if (j > 0 and grid[i][j - 1] == 1):
+                        e += 1
+                    if (i > 0 and grid[i - 1][j] == 1):
+                        e += 1
+    return s * 4 - e * 2
